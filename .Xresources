@@ -1,0 +1,38 @@
+!---- Xft Fonts ----
+Xft.autohint:	false
+Xft.hintstyle:	hintfull
+Xft.hinting:	true
+Xft.antialias:	true
+Xft.rgba:	rgb
+Xft.lcdfilter:	lcddefault
+Xft.pixelsize:  11
+Xft*dpi:        96
+
+!---- urxvt ----
+urxvt*font:     xft:monospace:pixelsize=12:antialias=true
+urxvt*letterSpace: -1
+urxvt*transparent:   false
+urxvt*shading:       18
+
+urxvt*background: #000000
+urxvt*foreground: #DDDDDD
+urxvt*color0:	#2E3436
+urxvt*color1:	#B51e1e
+urxvt*color2:	#4E9A06
+urxvt*color3:	#C4A000
+urxvt*color4:	#3465A4
+urxvt*color5:	#75507B
+urxvt*color6:	#CE5C00
+urxvt*color7:	#BABDB9
+urxvt*color8:	#555753
+urxvt*color9:	#EF2929
+urxvt*color10:	#8AE234
+urxvt*color11:	#FCE94F
+urxvt*color12:	#729FCF
+urxvt*color13:	#AD7FA8
+urxvt*color14:	#FCAF3E
+urxvt*color15:	#EEEEEC
+
+urxvt*scrollstyle: 0
+urxvt*saveLines: 50000
+urxvt*scrollBar: true
