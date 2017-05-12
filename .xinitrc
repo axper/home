@@ -2,8 +2,9 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 # Disk automounter
-udiskie --tray &
-
+if hash udiskie 2>/dev/null; then
+	udiskie --tray &
+fi
 
 # Keyboard layouts & disable caps lock
 #setxkbmap -layout us,am,ru -variant ,phonetic-alt,phonetic -option 'grp:alt_space_toggle,caps:escape' &
@@ -17,6 +18,11 @@ xset b off
 
 # Load styles
 xrdb ~/.Xresources
+
+# Start dunst notification daemon
+if hash dunst 2>/dev/null; then
+	dunst &
+fi
 
 # Start i3
 exec i3
