@@ -40,14 +40,14 @@ alias la='ls -A --group-directories-first'
 alias l='ls -lAh --group-directories-first'
 # other
 alias grep='grep --color=always'
-alias v='gvim'
+alias v='vim'
 alias p='ps -ux'
 # Write command history, as typing 'S' in ranger erases it
 #alias ra='fc -W && ranger'
 #alias a='fc -W && ranger'
 alias pwgen='pwgen -yc'
 alias s='sudo '
-alias sv='sudo -E gvim '
+alias sv='sudo -E vim '
 alias sudo='sudo '
 alias cal='cal -m'
 alias updatedb='sudo updatedb'
@@ -140,6 +140,7 @@ extract()      # Handy Extract Program
         case $1 in
             *.tar.bz2)   tar xvjf "$1"    ;;
             *.tar.gz)    tar xvzf "$1"    ;;
+            *.tar.xz)    tar xvf "$1"     ;;
             *.bz2)       bunzip2 "$1"     ;;
             *.rar)       unrar x "$1"     ;;
             *.gz)        gunzip "$1"      ;;
