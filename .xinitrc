@@ -24,5 +24,11 @@ if hash dunst 2>/dev/null; then
 	dunst &
 fi
 
+# Start autocutsel (merges two X text select/paste clipboards)
+if hash autocutsel 2>/dev/null; then
+	autocutsel -fork &
+	autocutsel -selection PRIMARY -fork &
+fi
+
 # Start i3
 exec i3
