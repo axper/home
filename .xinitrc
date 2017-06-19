@@ -24,12 +24,6 @@ if hash dunst 2>/dev/null; then
 	dunst &
 fi
 
-# Start autocutsel (merges two X text select/paste clipboards)
-if hash autocutsel 2>/dev/null; then
-	autocutsel -fork &
-	autocutsel -selection PRIMARY -fork &
-fi
-
 # Monitor layout
 xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --output DP-2 --primary --mode 1920x1080 --pos 0x0
 
