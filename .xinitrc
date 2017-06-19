@@ -30,5 +30,8 @@ if hash autocutsel 2>/dev/null; then
 	autocutsel -selection PRIMARY -fork &
 fi
 
+# Monitor layout
+xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --output DP-2 --primary --mode 1920x1080 --pos 0x0
+
 # Start i3
 exec i3
