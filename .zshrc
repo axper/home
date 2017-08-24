@@ -80,6 +80,8 @@ alias m='man2archwiki'
 #alias msfconsole="msfconsole --quiet -x \"db_connect ${USER}@msf3\""
 alias nexus='jmtpfs -o allow_other /media/nexus'
 alias nexus-umount='fusermount -u /media/nexus'
+# SSH set TERM
+alias ssh='TERM=xterm ssh'
 
 
 ###### Colored man pages ######
