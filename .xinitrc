@@ -24,5 +24,8 @@ if hash dunst 2>/dev/null; then
 	dunst &
 fi
 
+# Start autocutsel
+autocutsel -fork
+
 # Start i3
 exec i3
