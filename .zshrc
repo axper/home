@@ -208,4 +208,8 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 #source <(envoy -p)
 
 
+###### virtualenvwrapper ######
+[ -r /usr/bin/virtualenvwrapper.sh ] && . /usr/bin/virtualenvwrapper.sh
+
+
 source ~/.zshenv
