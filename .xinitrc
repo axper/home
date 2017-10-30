@@ -27,5 +27,12 @@ fi
 # Start autocutsel
 autocutsel -fork
 
+# Gnome Keyring
+if hash gnome-keyring-daemon 2>/dev/null; then
+	dbus-update-activation-environment --systemd DISPLAY
+	eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+	export SSH_AUTH_SOCK
+fi
+
 # Start i3
 exec i3
