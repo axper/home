@@ -1,6 +1,6 @@
 # Environment variables
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-export EDITOR=gvim
+export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
 export PATH=$PATH:~/.scripts
@@ -18,4 +18,5 @@ export DISPLAY=":0.0"  # for skype
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
 export HISTSIZE=1000000
+export ANDROID_HOME=/media/storage/android-sdk
 unset SSH_ASKPASS # Disables gui in git when asking for password
