@@ -1,6 +1,5 @@
 source /etc/profile
 
-
 ###### Zsh settings ######
 HISTFILE=~/.history
 HISTSIZE=10000
@@ -209,7 +208,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
 ###### virtualenvwrapper ######
-[ -r /usr/bin/virtualenvwrapper.sh ] && . /usr/bin/virtualenvwrapper.sh
-
+#[ -r /usr/bin/virtualenvwrapper.sh ] && . /usr/bin/virtualenvwrapper.sh
 
 source ~/.zshenv
