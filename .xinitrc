@@ -2,9 +2,9 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 # Disk automounter
-if hash udiskie 2>/dev/null; then
-	udiskie --tray &
-fi
+#if hash udiskie 2>/dev/null; then
+#	udiskie --tray &
+#fi
 
 # Keyboard layouts & disable caps lock
 #setxkbmap -layout us,am,ru -variant ,phonetic-alt,phonetic -option 'grp:alt_space_toggle,caps:escape' &
@@ -25,7 +25,10 @@ if hash dunst 2>/dev/null; then
 fi
 
 # Start autocutsel
-autocutsel -fork
+if hash autocutsel 2>/dev/null; then
+	autocutsel -fork &
+	autocutsel -selection PRIMARY -fork &
+fi
 
 # Gnome Keyring
 if hash gnome-keyring-daemon 2>/dev/null; then
