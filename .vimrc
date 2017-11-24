@@ -125,5 +125,5 @@ autocmd BufRead,BufNewFile PKGBUILD set filetype=PKGBUILD
 autocmd BufRead,BufNewFile *.asm set filetype=nasm
 autocmd BufRead,BufNewFile *.nasm set filetype=nasm
 
-colorscheme desert
+colorscheme default
 
