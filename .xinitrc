@@ -30,6 +30,11 @@ if hash autocutsel 2>/dev/null; then
 	autocutsel -selection PRIMARY -fork &
 fi
 
+# Start NetworkManager applet
+if hash nm-applet 2>/dev/null; then
+	nm-applet &
+fi
+
 # Gnome Keyring
 if hash gnome-keyring-daemon 2>/dev/null; then
 	dbus-update-activation-environment --systemd DISPLAY
