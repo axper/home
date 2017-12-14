@@ -19,4 +19,5 @@ export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
 export HISTSIZE=1000000
 export ANDROID_HOME=/media/storage/android-sdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 unset SSH_ASKPASS # Disables gui in git when asking for password
