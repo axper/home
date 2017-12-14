@@ -1,0 +1,8 @@
+[push]
+	default = current
+[user]
+	email = babken@lazydevelo.com
+	user = Babken Vardanyan
+	name = Babken Vardanyan
+[core]
+	autocrlf = input
