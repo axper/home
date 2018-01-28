@@ -12,7 +12,10 @@
 .bash_profile
 .bashrc
 .cache/
+.config/albert/*
+!.config/albert/albert.conf
 .config/Android Open Source Project/
+.config/Litecoin/
 .config/Insomnia/
 .config/QtProject.conf
 .config/ReText project/
