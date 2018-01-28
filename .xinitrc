@@ -1,3 +1,7 @@
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+xrandr --dpi 96
+
 # Reload .Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
@@ -40,6 +44,16 @@ if hash gnome-keyring-daemon 2>/dev/null; then
 	dbus-update-activation-environment --systemd DISPLAY
 	eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 	export SSH_AUTH_SOCK
+fi
+
+# Polkit agent
+if hash /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 2>/dev/null; then
+	/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+fi
+
+# Albert program launcher
+if hash albert 2>/dev/null; then
+	albert &
 fi
 
 # Start i3
