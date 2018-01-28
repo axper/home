@@ -3,7 +3,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
-export PATH=$PATH:~/.scripts
+export PATH=/home/babken/.local/bin:$PATH
 #export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS=' -R '
 export LANG=en_US.utf8
@@ -18,6 +18,6 @@ export DISPLAY=":0.0"  # for skype
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
 export HISTSIZE=1000000
-export ANDROID_HOME=/media/storage/android-sdk
+export ANDROID_HOME=/home/babken/android-sdk
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 unset SSH_ASKPASS # Disables gui in git when asking for password
