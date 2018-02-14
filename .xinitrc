@@ -56,5 +56,10 @@ if hash albert 2>/dev/null; then
 	albert &
 fi
 
+# Compton
+if hash compton 2>/dev/null; then
+	compton -b -c &
+fi
+
 # Start i3
 exec i3
