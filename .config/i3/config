@@ -178,3 +178,11 @@ bindsym $mod+KP_Enter exec --no-startup-id i3-sensible-terminal
 #hide_edge_borders both
 new_window pixel 3
 new_float normal 2
+
+
+for_window [class="Upwork"] floating enable
+
+
+# Colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #0088cc #0088cc #ffffff #2e9ef4   #0088cc
