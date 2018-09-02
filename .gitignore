@@ -78,3 +78,23 @@ pics/
 projects/
 test/
 VirtualBox VMs/
+.PyCharm*/
+.acetoneiso/
+.docker/
+.gem/
+.idea/
+.mplayer/
+vmware/
+node_modules/
+Audio/
+.psql_history
+.terminfo/
+.vmware/
+.zoom/
+*.hprof
+.xsession-errors.old
+.stride/
+.node_repl
+.esd_auth
+.dmrc
+.cargo/
