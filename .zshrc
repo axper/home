@@ -81,19 +81,20 @@ alias nexus='jmtpfs -o allow_other /media/nexus'
 alias nexus-umount='fusermount -u /media/nexus'
 # SSH set TERM
 alias ssh='TERM=xterm ssh'
+alias vayvay='sudo netctl-auto switch-to vayvay'
 
 
 ###### Colored man pages ######
 man() {
-	env \
-		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-		LESS_TERMCAP_md=$(printf "\e[1;31m") \
-		LESS_TERMCAP_me=$(printf "\e[0m") \
-		LESS_TERMCAP_se=$(printf "\e[0m") \
-		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-		LESS_TERMCAP_ue=$(printf "\e[0m") \
-		LESS_TERMCAP_us=$(printf "\e[1;32m") \
-			man "$@"
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;31m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+            man "$@"
 }
 
 
@@ -107,29 +108,29 @@ PROMPT="%{$fg_bold[blue]%}%~  %{$reset_color%}"
 #case $TERM in
 #  termite|*xterm*|rxvt|rxvt-unicode|rxvt-256color|rxvt-unicode-256color|(dt|k|E)term)
 #    precmd () {
-#    	print -Pn "\e]0;%~\a"
-#		# Notify
-#		if ! [[ -z $CMD_START_DATE ]]; then
-#			CMD_END_DATE=$(date +%s)
-#			CMD_ELAPSED_TIME=$(($CMD_END_DATE - $CMD_START_DATE))
-#			CMD_NOTIFY_THRESHOLD=100
+#        print -Pn "\e]0;%~\a"
+#        # Notify
+#        if ! [[ -z $CMD_START_DATE ]]; then
+#            CMD_END_DATE=$(date +%s)
+#            CMD_ELAPSED_TIME=$(($CMD_END_DATE - $CMD_START_DATE))
+#            CMD_NOTIFY_THRESHOLD=100
 #
-#			if [[ $CMD_ELAPSED_TIME -gt $CMD_NOTIFY_THRESHOLD ]]; then
-#				#print -n '\a'
-#				#notify-send 'Job finished' "The job \"$CMD_NAME\" has finished."
-#				#if [[ $CMD_NAME -ne "ra" ]]; then
-#					#espeak "completed command ${CMD_NAME}" 2>/dev/null &>/dev/null
-#					espeak "completed command ${CMD_NAME}" 2>/dev/null
-#				#fi
-#			fi
-#		fi
+#            if [[ $CMD_ELAPSED_TIME -gt $CMD_NOTIFY_THRESHOLD ]]; then
+#                #print -n '\a'
+#                #notify-send 'Job finished' "The job \"$CMD_NAME\" has finished."
+#                #if [[ $CMD_NAME -ne "ra" ]]; then
+#                    #espeak "completed command ${CMD_NAME}" 2>/dev/null &>/dev/null
+#                    espeak "completed command ${CMD_NAME}" 2>/dev/null
+#                #fi
+#            fi
+#        fi
 #    }
 #    preexec () {
-#		print -Pn "\e]0;%~ ($1)\a"
-#		# Notify
-#		CMD_START_DATE=$(date +%s)
-#		CMD_NAME=$1
-#	}
+#        print -Pn "\e]0;%~ ($1)\a"
+#        # Notify
+#        CMD_START_DATE=$(date +%s)
+#        CMD_NAME=$1
+#    }
 #    ;;
 #esac
 
@@ -176,8 +177,8 @@ add-zsh-hook precmd precmd_disown
 
 
 ###### Command not found ######
-#source /usr/share/doc/pkgfile/command-not-found.zsh
-#[ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
+source /usr/share/doc/pkgfile/command-not-found.zsh
+[ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
 
 ###### Xterm tab width ######
@@ -187,19 +188,17 @@ add-zsh-hook precmd precmd_disown
 ###### Ranger: check if already running ######
 # Call only this function if you want to open ranger
 ra() {
-	if [ -z "$RANGER_LEVEL" ]
-	then
-		ranger
-	else
-		exit
-	fi
+    if [ -z "$RANGER_LEVEL" ]
+    then
+        ranger
+    else
+        exit
+    fi
 }
 
 
 ###### Syntax highlighting ######
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
 ###### SSH keys ######
@@ -210,4 +209,21 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 ###### virtualenvwrapper ######
 #[ -r /usr/bin/virtualenvwrapper.sh ] && . /usr/bin/virtualenvwrapper.sh
 
-source ~/.zshenv
+###### Terminal Window Title ######
+# Copied from: https://bbs.archlinux.org/viewtopic.php?pid=1412926#p1412926
+case $TERM in
+    termite|*xterm*|rxvt|rxvt-unicode|rxvt-256color|rxvt-unicode-256color|(dt|k|E)term)
+        precmd () { print -Pn "\e]0;Terminal\a" }
+        preexec () { print -Pn "\e]0;$1\a" }
+    ;;
+    screen|screen-256color)
+        precmd () {
+            print -Pn "\e]83;title \"$1\"\a"
+            print -Pn "\e]0;$TERM\a"
+        }
+        preexec () {
+            print -Pn "\e]83;title \"$1\"\a"
+            print -Pn "\e]0;$TERM - $1\a"
+        }
+    ;;
+esac
