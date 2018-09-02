@@ -16,7 +16,7 @@
 !.config/albert/albert.conf
 !.config/albert/albert.conf
 !.config/dunst/dunstrc
-!.config/i3/config
+!.config/i3
 !.config/mimeapps.list
 .crashlytics/
 .emulator_console_auth_token
