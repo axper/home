@@ -1,6 +1,6 @@
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
-xrandr --dpi 96
+xrandr --dpi 110
 
 # Reload .Xresources
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
