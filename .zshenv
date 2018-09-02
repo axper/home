@@ -20,4 +20,5 @@ export CXX=/usr/bin/clang++
 export HISTSIZE=1000000
 export ANDROID_HOME=/home/babken/android-sdk
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export COMPOSE_FILE=docker-compose.local.yml
 unset SSH_ASKPASS # Disables gui in git when asking for password
