@@ -1,5 +1,10 @@
-theme = "slick"
 icons = "awesome"
+
+[theme]
+name = "slick"
+
+[theme.overrides]
+separator = ""
 
 [[block]]
 block = "backlight"
