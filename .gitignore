@@ -98,3 +98,11 @@ Audio/
 .esd_auth
 .dmrc
 .cargo/
+.audacity-data/
+.aws/
+.cups/
+.fehbg
+.gtklp/
+.hplip/
+.sane/
+
