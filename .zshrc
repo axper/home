@@ -227,3 +227,4 @@ case $TERM in
         }
     ;;
 esac
+
