@@ -61,5 +61,10 @@ if hash compton 2>/dev/null; then
 	compton -b -c &
 fi
 
+# Autolock the screen with slock after 1 minute
+if hash xautolock 2>/dev/null && hash slock 2>/dev/null; then
+	xautolock -time 1 -locker slock &
+fi
+
 # Start i3
 exec i3
