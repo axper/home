@@ -105,4 +105,6 @@ Audio/
 .gtklp/
 .hplip/
 .sane/
-
+.wine/
+virtual-drives/
+.mtab.fuseiso
